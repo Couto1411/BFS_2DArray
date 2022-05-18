@@ -90,6 +90,7 @@ void printMatrix(){
 		printf("\n");
 	}
 }
+
 int BFS(Fila *fila){
 	int iteracoes=0;
 	int posicoesLinha[4] = { -1, 0, 1, 0 };
@@ -105,8 +106,7 @@ int BFS(Fila *fila){
         int x = fila->first->prox->data.lin;
         int y = fila->first->prox->data.col;
         Desenfileira(fila);
- 
-        // Go to the adjacent cells
+
         for (int i = 0; i < 4; i++) {
             int adjx = x + posicoesLinha[i];
             int adjy = y + posicoesColuna[i];
@@ -117,6 +117,7 @@ int BFS(Fila *fila){
 				matrix[adjx][adjy]=2;
             }
         }
+
 		iteracoes++;
 		logFila(fila);
     }
@@ -126,13 +127,12 @@ int BFS(Fila *fila){
 		printf("Não chega no final\n");
 	return iteracoes;
 }
+
 bool isValid(int lin, int col){
-    if (lin < 0 || col < 0 || lin >= tamanhoMatrix || col >= tamanhoMatrix){
+    if (lin < 0 || col < 0 || lin >= tamanhoMatrix || col >= tamanhoMatrix)
         return false;
-	}
-    else if (matrix[lin][col]==1||matrix[lin][col]==2){
+    else if (matrix[lin][col]==1||matrix[lin][col]==2)
         return false;
-	}
     else
 		return true;
 }
