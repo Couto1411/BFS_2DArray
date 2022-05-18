@@ -76,7 +76,7 @@ int BFS(Fila *fila){
     Item item;
 	item.col=0;
 	item.lin=0;
-	matrix[0][0]=1;
+	matrix[0][0]=2;
 
     Enfileira(fila,item);
 
