@@ -16,7 +16,6 @@ void Enfileira(Fila *f, Item d){
 void Desenfileira(Fila *f){
 	Block *aux;
 	if(f->first == f->last || f == NULL || f->first->prox == NULL){
-		printf("FILA VAZIA!\n");
 		return;
 	}
 	aux = f->first;
@@ -27,7 +26,7 @@ void Desenfileira(Fila *f){
 void preencheMatrix(){
     FILE *f;
 	char arquivo[80];
-	char barreira[100];
+	char barreira[4];
 	int barreirai,barreiraj;
 	printf("Qual o nome do arquivo do labirinto? (Max 80)\n");
 	fgets(arquivo,80,stdin);
@@ -37,7 +36,6 @@ void preencheMatrix(){
         exit(1);
     }
 	fscanf(f,"%d",&tamanhoMatrix);
-	fclose(f);
 	matrix=(int**) malloc(sizeof(int*)*(tamanhoMatrix+1));
 	for (int i = 0; i < tamanhoMatrix+1; i++){
 		matrix[i]=(int*)malloc(sizeof(int)*tamanhoMatrix);
@@ -45,7 +43,6 @@ void preencheMatrix(){
 			matrix[i][j]=0;
 	}
 	f=fopen(arquivo,"r");
-	fscanf(f,"%s",barreira);
 	fscanf(f,"%s",barreira);
 	while(!feof (f)){
 		barreirai=barreira[0]-'0';
@@ -64,7 +61,7 @@ void FImprime(Fila *f){
 
 	aux = f->first->prox;
 	while(aux != NULL){
-		printf("%d-", aux->data.val);
+		printf("%d, %d-", aux->data.lin, aux->data.col);
 		aux = aux->prox;
 	}
 	printf("\n");
@@ -77,4 +74,49 @@ void printMatrix(){
 			printf("%d ",matrix[i][j]);
 		printf("\n");
 	}
+}
+int BFS(Fila *fila){
+	int iteracoes=0;
+	int posicoesLinha[4] = { -1, 0, 1, 0 };
+	int posicoesColuna[4] = { 0, 1, 0, -1 };
+    Item item;
+	item.col=0;
+	item.lin=0;
+	matrix[0][0]=1;
+
+    Enfileira(fila,item);
+
+    while ((!((item.col==tamanhoMatrix-1)&&(item.lin==tamanhoMatrix-1)))&&fila->first->prox!=NULL) {
+        int x = fila->first->prox->data.lin;
+        int y = fila->first->prox->data.col;
+        Desenfileira(fila);
+ 
+        // Go to the adjacent cells
+        for (int i = 0; i < 4; i++) {
+            int adjx = x + posicoesLinha[i];
+            int adjy = y + posicoesColuna[i];
+            if (isValid(adjx,adjy)) {
+				item.lin=adjx;
+				item.col=adjy;
+                Enfileira(fila,item);
+				matrix[adjx][adjy]=2;
+            }
+        }
+		iteracoes++;
+    }
+	if (fila->first->prox!=NULL)
+		printf("Chega no final\n");
+	else
+		printf("Não chega no final\n");
+	return iteracoes;
+}
+bool isValid(int lin, int col){
+    if (lin < 0 || col < 0 || lin >= tamanhoMatrix || col >= tamanhoMatrix){
+        return false;
+	}
+    else if (matrix[lin][col]==1||matrix[lin][col]==2){
+        return false;
+	}
+    else
+		return true;
 }

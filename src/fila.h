@@ -4,14 +4,15 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>
-#include <string.h>
+#include<string.h>
 
 typedef struct Item Item;
 typedef struct Block Block;
 typedef struct Fila Fila;
 
 struct Item{
-	int val;
+	int lin;
+	int col;
 };
 
 struct Block{
@@ -33,5 +34,7 @@ void Desenfileira(Fila *f);
 void FImprime(Fila *f);
 void preencheMatrix();
 void printMatrix();
+int BFS(Fila *fila);
+bool isValid(int lin, int col);
 
 #endif
