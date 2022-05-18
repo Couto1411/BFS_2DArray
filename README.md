@@ -58,6 +58,11 @@ Execução:
 	<img src="imgs/exec.jpg"/> 
 </p> 
 
+# Referências
+
+Utilizou-se como base de código o repositório de fila dinâmica: [mpiress/dynamic_queue](https://github.com/mpiress/dynamic_queue)       
+E também o material sobre "BFS in 2d array": [BFS](https://www.geeksforgeeks.org/breadth-first-traversal-bfs-on-a-2d-array/)   
+
 # Compilação e Execução
 
 O programa possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
