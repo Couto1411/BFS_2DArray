@@ -26,7 +26,6 @@ void Desenfileira(Fila *f){
 void preencheMatrix(){
     FILE *f;
 	char arquivo[80];
-	char barreira[4];
 	int barreirai,barreiraj;
 	printf("Qual o nome do arquivo do labirinto? (Max 80)\n");
 	fgets(arquivo,80,stdin);
@@ -42,17 +41,12 @@ void preencheMatrix(){
 		for (int j = 0; j < tamanhoMatrix; j++)
 			matrix[i][j]=0;
 	}
-	f=fopen(arquivo,"r");
-	fscanf(f,"%s",barreira);
 	while(!feof (f)){
-		barreirai=barreira[0]-'0';
-		barreiraj=barreira[2]-'0';
+		fscanf(f,"%d",&barreirai);
+		fgetc(f);
+		fscanf(f,"%d",&barreiraj);
 		matrix[barreirai][barreiraj]=1;
-		fscanf(f,"%s",barreira);
 	}
-	barreirai=barreira[0]-'0';
-	barreiraj=barreira[2]-'0';
-	matrix[barreirai][barreiraj]=1;
     fclose(f);
 }
 
