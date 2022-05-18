@@ -31,6 +31,7 @@ int **matrix;
 void FFVazia(Fila *f);
 void Enfileira(Fila *f, Item d);
 void Desenfileira(Fila *f);
+void logFila(Fila *fila);
 void FImprime(Fila *f);
 void preencheMatrix();
 void printMatrix();

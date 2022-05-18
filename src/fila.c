@@ -50,6 +50,27 @@ void preencheMatrix(){
     fclose(f);
 }
 
+void logFila(Fila *fila){
+	FILE *f;
+	char str[500]="\0";
+	char numero[7];
+	f=fopen("Log.txt","a");
+	Block *aux;
+	aux = fila->first->prox;
+	while(aux != NULL){
+		sprintf(numero, "%d", aux->data.lin);
+		strcat(str,numero);
+		strcat(str,",");
+		sprintf(numero, "%d", aux->data.col);
+		strcat(str,numero);
+		strcat(str," - ");
+		aux = aux->prox;
+	}
+	strcat(str,"\n");
+	fprintf(f, "%s",str);
+	fclose(f);
+}
+
 void FImprime(Fila *f){
 	Block *aux;
 
@@ -97,6 +118,7 @@ int BFS(Fila *fila){
             }
         }
 		iteracoes++;
+		logFila(fila);
     }
 	if (fila->first->prox!=NULL)
 		printf("Chega no final\n");
