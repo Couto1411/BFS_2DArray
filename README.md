@@ -25,9 +25,12 @@ Existe uma fila dinâmica **f** de posições (int i, int j) (Baseado de : [vide
   1- Iguala a posição verificada ao primeiro item da fila, e desenfilera o mesmo;        
   2- Verifica-se todos os vizinhos da posição e os adiciona na fila:       
     - Para cada adjacente, cima, direita, baixo, esquerda, verifica se a linha e coluna deles está no intervalo [0,T], se não é uma barreira (1) e se já não foi passado (2);    
+
   3- Adiciona um à váriavel *iteracoes* que será retornada;      
 - Imprime se conseguiu chegar no final ou não;     
-- Retorna as iteracoes.      
+- Retorna as iteracoes.
+
+5) Repete-se *printMatrix()* mostrando a matriz com o caminho percorrido 1=barreira, 0=caminho não percorrido, 2=caminho percorrido.
 
 Obs.:    
 - O arquivo deve ser dado na mesma maneira que o apresentado.
