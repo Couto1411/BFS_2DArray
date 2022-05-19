@@ -1,5 +1,5 @@
 # BFS_2DArray
-O nosso objetivo é descobrir quantas iterações um algoritmo de busca em largura (BFS - breadth-first search) necessita para chegar no final de uma matriz
+O nosso objetivo é descobrir quantas iterações um algoritmo de busca em largura (BFS - breadth-first search) necessita para chegar no final (n-1,n-1) de uma matriz (N,N)  a partir da origem (0,0)
 # Logica
 Foi-se feito um programa com a seguinte lógica:    
 Existe uma fila dinâmica **f** de posições (int i, int j) (Baseado de : [vide git](https://github.com/mpiress/dynamic_queue))
@@ -37,7 +37,9 @@ Existe uma fila dinâmica **f** de posições (int i, int j) (Baseado de : [vide
 6) Repete-se *printMatrix()* mostrando a matriz com o caminho percorrido 1=barreira, 0=caminho não percorrido, 2=caminho percorrido.
 
 Obs.:    
-- O arquivo deve ser dado na mesma maneira que o apresentado.
+- O arquivo deve ser dado na mesma maneira que o apresentado;
+- O número de iterações é contado a partir da quantidade de vezes que o looping que desenfilera um item é executado, isso se faz útil pois a execução de enfilerar varia de 0 a 3 vezes a quantidade que é desenfilerada;
+- A matriz inserida não deve conter uma barreira nem na posição incial (0,0) nem na posição final (T-1,T-1). 
 # Exemplo de execução
 Arquivo:
 >6      
