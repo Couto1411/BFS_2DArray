@@ -1,4 +1,4 @@
-# BFS_Test
+# BFS_2DArray
 O nosso objetivo é descobrir quantas iterações um algoritmo de busca em largura (BFS - breadth-first search) necessita para chegar no final de uma matriz
 # Logica
 Foi-se feito um programa com a seguinte lógica:    
@@ -23,7 +23,7 @@ Existe uma fila dinâmica **f** de posições (int i, int j) (Baseado de : [vide
 
 5) A seguir a função *BFS(&F)* retorna as iterações da seguinte maneira:   
 - Colocasse a posição {0,0} na fila;      
-- Enquanto a posição verificada não for {T,T} e enquanto a fila não estiver vazia:       
+- Enquanto a posição verificada não for {T-1,T-1} e enquanto a fila não estiver vazia:       
   1- Iguala a posição verificada ao primeiro item da fila, e desenfilera o mesmo;        
   2- Verifica-se todos os vizinhos da posição e os adiciona na fila:       
     - Para cada adjacente, cima, direita, baixo, esquerda, verifica se a linha e coluna deles está no intervalo [0,T], se não é uma barreira (1) e se já não foi passado (2);    
