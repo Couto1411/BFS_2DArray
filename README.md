@@ -26,7 +26,7 @@ Existe uma fila dinâmica **f** de posições (int i, int j) (Baseado de : [vide
 - Enquanto a posição verificada não for {T-1,T-1} e enquanto a fila não estiver vazia:       
   1- Iguala a posição verificada ao primeiro item da fila, e desenfilera o mesmo;        
   2- Verifica-se todos os vizinhos da posição e os adiciona na fila:       
-    - Para cada adjacente, baixo, direita, cima, esquerda, verifica se a linha e coluna deles está no intervalo [0,T], se não é uma barreira (1) e se já não foi passado (2);    
+    - Para cada adjacente, baixo, direita, cima, esquerda, verifica se a linha e coluna deles está no intervalo [{0,0},{T-1,T-1}], se não é uma barreira (1) e se já não foi passado (2);    
 
   3- Adiciona um à váriavel *iteracoes* que será retornada;   
   4- Adiciona conteúdo da fila ao arquivo "Log.txt";
