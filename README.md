@@ -46,16 +46,16 @@ Arquivo:
 >3,2        
 >1,2     
 
-Log.txt:
-</p>
-<p align="center">
-	<img src="imgs/logtxt.jpg"/> 
-</p> 
-
 Execução:
 </p>
 <p align="center">
 	<img src="imgs/exec.jpg"/> 
+</p> 
+
+Log.txt:
+</p>
+<p align="center">
+	<img src="imgs/logtxt.jpg"/> 
 </p> 
 
 # Referências
