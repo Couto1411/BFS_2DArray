@@ -7,14 +7,14 @@ Existe uma fila dinâmica **f** de posições (int i, int j) (Baseado de : [vide
 1) Ao entrar no programa encontra-se uma rotina que abre um arquivo "Log.txt" onde iremos registrar o conteúdo da fila de cada iteração em cada linha;      
 
 2) A segunda função encontrada é *preencheMatrix()* tem o objetivo de alocar e preencher uma matriz dinamica **matrix** de forma a parecer um labirinto, sendo 0 caminho livre e 1 barreira. Informações de arquivos de formato:
->T -- tamanho da matriz quadrática
->i<sub>1</sub>,j<sub>1</sub>
->i<sub>2</sub>,j<sub>2</sub>
->i<sub>3</sub>,j<sub>3</sub>
->...
->i<sub>n</sub>,j<sub>n</sub>
->
->onde *i* é a linha de uma barreira n, e *j* a coluna de uma barreira n
+>T -- tamanho da matriz quadrática     
+>i<sub>1</sub>,j<sub>1</sub>       
+>i<sub>2</sub>,j<sub>2</sub>          
+>i<sub>3</sub>,j<sub>3</sub>       
+>...       
+>i<sub>n</sub>,j<sub>n</sub>      
+>        
+>onde *i* é a linha de uma barreira n, e *j* a coluna de uma barreira n       
 
 3) A terceira função *printMatrix()* mostra a matriz obtida após extração de arquivo;  
 
@@ -46,17 +46,22 @@ Arquivo:
 >3,2        
 >1,2     
 
+Execução:
+</p>
+<p align="center">
+	<img src="imgs/exec.jpg"/> 
+</p> 
+
 Log.txt:
 </p>
 <p align="center">
 	<img src="imgs/logtxt.jpg"/> 
 </p> 
 
-Execução:
-</p>
-<p align="center">
-	<img src="imgs/exec.jpg"/> 
-</p> 
+# Referências
+
+Utilizou-se como base de código o repositório de fila dinâmica: [mpiress/dynamic_queue](https://github.com/mpiress/dynamic_queue)       
+E também o material sobre "BFS in 2d array": [BFS](https://www.geeksforgeeks.org/breadth-first-traversal-bfs-on-a-2d-array/)   
 
 # Compilação e Execução
 
