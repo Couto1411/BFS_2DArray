@@ -1,5 +1,8 @@
 #include "fila.h"
 
+int tamanhoMatrix;
+int **matrix;
+
 void FFVazia(Fila *f){
 	f->first = (Block*) malloc (sizeof(Block));
 	f->last  = f->first;

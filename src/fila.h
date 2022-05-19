@@ -25,9 +25,6 @@ struct Fila{
 	Block *last;
 };
 
-int tamanhoMatrix;
-int **matrix;
-
 void FFVazia(Fila *f);
 void Enfileira(Fila *f, Item d);
 void Desenfileira(Fila *f);
