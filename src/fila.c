@@ -93,7 +93,7 @@ void printMatrix(){
 
 int BFS(Fila *fila){
 	int iteracoes=0;
-	int posicoesLinha[4] = { -1, 0, 1, 0 };
+	int posicoesLinha[4] = { 1, 0, -1, 0 };
 	int posicoesColuna[4] = { 0, 1, 0, -1 };
     Item item;
 	item.col=0;
